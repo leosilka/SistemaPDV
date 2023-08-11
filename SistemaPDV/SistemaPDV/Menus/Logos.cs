@@ -2,7 +2,7 @@
 
 internal class Logos
 {
-   public void ExibirLogoInicial()
+    public void ExibirLogoInicial()
     {
         Console.WriteLine(@"
 

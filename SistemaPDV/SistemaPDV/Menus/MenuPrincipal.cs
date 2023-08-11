@@ -1,6 +1,6 @@
 ﻿namespace SistemaPDV.Menus;
 
-internal class MenuPrincipal
+public class MenuPrincipal
 {
     public void ExibirTituloOpcoes(string opcoes)
     {

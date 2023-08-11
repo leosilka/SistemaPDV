@@ -1,33 +1,27 @@
-﻿using SistemaPDV.Cadastros;
-using SistemaPDV.Menus;
-using SistemaPDV.Modelos;
+﻿using SistemaPDV.Menus;
 
-Dictionary<string, Usuarios> usuarios = new Dictionary<string, Usuarios>();
+Logos logo = new Logos();
+logo.ExibirLogoInicial();
 
-Dictionary<int, MenuPrincipal> opcoes = new();
-opcoes.Add(1, new MenuUsuarios(usuarios));
-opcoes.Add(2, new MenuVendedor());
-opcoes.Add(3, new MenuItem());
-opcoes.Add(4, new MenuCaixa());
-opcoes.Add(5, new MenuPedido());
+Dictionary<int, MenuPrincipal> opcoes = new Dictionary<int, MenuPrincipal>();
+opcoes.Add(1, new MenuCliente());
+//opcoes.Add(2, new MenuItem());
+//opcoes.Add(3, new MenuCaixa());
+//opcoes.Add(4, new MenuPedido());
 opcoes.Add(0, new MenuSair());
-
-Logos logos = new Logos();
-logos.ExibirLogoInicial();
 
 void ExibirOpcoes()
 {
     Console.WriteLine(@"
 ---------------------------
-    SISTEMA PDV - v1
+    SISTEMA PDV - v1.1
 ---------------------------
 
-[1] - Menu usuário
-[2] - Menu vendedor
-[3] - Menu item
-[4] - Menu caixa
-[5] - Menu pedido
-[0] - Sair do sistema
+[1] - Menu Cliente
+[2] - Menu Item
+[3] - Menu Caixa
+[4] - Menu Pedido
+[0] - Sair
 ");
     Console.Write("\nDigite a sua opcao: ");
     string respostaOpcao = Console.ReadLine()!;
@@ -38,7 +32,8 @@ void ExibirOpcoes()
         MenuPrincipal menuExibido = opcoes[respostaOpcaoNumerica];
         menuExibido.Executar();
         if (respostaOpcaoNumerica > 0) ExibirOpcoes();
-    } else
+    }
+    else
     {
         Console.WriteLine("Opcao invalida!");
         ExibirOpcoes();

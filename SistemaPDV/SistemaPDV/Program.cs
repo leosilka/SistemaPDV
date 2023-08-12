@@ -5,9 +5,9 @@ logo.ExibirLogoInicial();
 
 Dictionary<int, MenuPrincipal> opcoes = new Dictionary<int, MenuPrincipal>();
 opcoes.Add(1, new MenuCliente());
-//opcoes.Add(2, new MenuItem());
-//opcoes.Add(3, new MenuCaixa());
-//opcoes.Add(4, new MenuPedido());
+opcoes.Add(2, new MenuItem());
+//opcoes.Add(3, new MenuPedido());
+//opcoes.Add(4, new MenuCaixa());
 opcoes.Add(0, new MenuSair());
 
 void ExibirOpcoes()
